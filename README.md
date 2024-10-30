@@ -1,1 +1,0 @@
-# shalhevet-computer-science-honors-2024
