@@ -1,20 +1,38 @@
 cir_win_txt=Text("Green Wins!")
 sq_win_txt=Text("Red Wins!")
+red_leading_txt=Text("RED IS WINNING")
+green_leading_txt=Text("GREEN IS WINNING")
+green_leading_txt.set_color(Color.green)
+red_leading_txt.set_color(Color.red)
+
 def winner():
-    if cir_x() >= 380-24:
+    if cir_x() >= 380:
+        remove(green_leading_txt)
         cir_win_txt.set_position(70,220)
         cir_win_txt.set_color(Color.green)
         cir_win_txt.set_font("40pt Helvetica")
         add(cir_win_txt)
         sq.set_position(-100,3)
-    elif sq_x() >= 380-49:
+    elif sq_x() >= 380:
+        remove(red_leading_txt)
         sq_win_txt.set_color(Color.red)
         sq_win_txt.set_position(70,220)
         sq_win_txt.set_font("40pt Helvetica")
         add(sq_win_txt)
         circle.set_position(-100,3)
+    if cir_x() > sq_x() and cir_x() < 380:
+        green_leading_txt.set_position(100,50)
+        remove(red_leading_txt)
+        remove(green_leading_txt)
+        add(green_leading_txt)
+    if sq_x() > cir_x() and sq_x() < 380:
+        red_leading_txt.set_position(100,50)
+        remove(green_leading_txt)
+        remove(red_leading_txt)
+        add(red_leading_txt)
         
-
+        
+        
 circle=Circle(25)
 circle.set_position(27,300)
 circle.set_color(Color.green)
@@ -25,8 +43,10 @@ sq.set_position(1,100)
 sq.set_color(Color.red)
 add(sq)
 
-def cir_x(): return circle.get_x()
+def cir_x(): return circle.get_x()-24
 def sq_x(): return sq.get_x()
+def cir_y(): return circle.get_y()
+def sq_y(): return sq.get_y()
 
 def move_square(event):
     if event.key=="ArrowRight":
