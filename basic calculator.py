@@ -9,6 +9,8 @@ def calc(num_1,oper,num_2):
         print(float(num_1)-float(num_2))
     elif oper=="/":
         print(float(num_1)/float(num_2))
+    elif oper=="^":
+        print(float(num_1)**float(num_2))
     else:
         print("I can't do that")
     
