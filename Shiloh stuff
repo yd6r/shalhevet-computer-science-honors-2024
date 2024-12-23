@@ -1,0 +1,37 @@
+def a():
+    currency = input("What type of currency do you have? ")
+    return currency
+
+def amount():
+    try:
+        num = int(input("And how many do you have? "))
+        return num
+    except ValueError:
+        print("Please enter a valid number.")
+        return None
+
+currency = a()
+quantity = amount()
+
+def a():
+    return input("What type of currency do you have? ")
+
+def amount():
+    return float(input("And how many do you have? "))
+
+def convert_currency(amount, from_currency, to_currency):
+    conversion_rates = {
+        "Dinar": {"Dinar": 1, "Shekel": 1/2, "Sela": 1/4, "Golden Dinar": 1/25, "Maneh": 1/100, "Kikkar": 1/6000},
+        "Shekel": {"Dinar": 2, "Shekel": 1, "Sela": 1/2, "Golden Dinar": 2/25, "Maneh": 1/50, "Kikkar": 1/3000},
+        "Sela": {"Dinar": 4, "Shekel": 2, "Sela": 1, "Golden Dinar": 4/25, "Maneh": 1/25, "Kikkar": 1/1500},
+        "Golden Dinar": {"Dinar": 25, "Shekel": 12.5, "Sela": 6.25, "Golden Dinar": 1, "Maneh": 1/4, "Kikkar": 1/240},
+        "Maneh": {"Dinar": 100, "Shekel": 50, "Sela": 25, "Golden Dinar": 4, "Maneh": 1, "Kikkar": 1/60},
+        "Kikkar": {"Dinar": 6000, "Shekel": 3000, "Sela": 1500, "Golden Dinar": 240, "Maneh": 60, "Kikkar": 1},
+    }
+    if from_currency in conversion_rates and to_currency in conversion_rates[from_currency]:
+        return amount * conversion_rates[from_currency][to_currency]
+    else:
+        return None
+
+print(a)
+print(amount)
