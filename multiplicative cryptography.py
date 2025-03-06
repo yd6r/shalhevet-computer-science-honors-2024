@@ -28,7 +28,8 @@ def modular_inverse(a, m):
 
 
 # Takes parameter 'multiply_key', the number which will be used in the multiplicative algorithm, and then asks for a message.
-# The key MUST be prime or the program will not work correctly.
+# The key MUST be prime or the program will not work correctly. If any character in the message is not included in
+#ALPHABET, it will print ERROR and end the program. 
 # The message is then run through the multiplicative algorithm to produce the encoded message. The encoded message will change
 # depending on the value of 'multiply_key'.
 def multiplicative_encode(multiply_key):
@@ -36,7 +37,8 @@ def multiplicative_encode(multiply_key):
     for letter in message:
         pos = ALPHABET.find(letter)
         if pos == -1:
-            print("ERROR", end="")
+            print("ERROR")
+            break
         else:
             convert = (pos * multiply_key) % len(ALPHABET)
             print(ALPHABET[convert], end="")
