@@ -1,7 +1,7 @@
 import math
 
 # The 'alphabet' is specific to this program, and does not contain many  characters such as ^ and ;.
-ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',.!?()[]/<>-_=+#*& "
+ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',.!?()[]{}/\<>-_=+#*&:;~ "
 ALPHABET+='"'
 
 # Checks if the key is coprime with the alphabet
