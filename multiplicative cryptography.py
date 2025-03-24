@@ -1,6 +1,6 @@
 import math
 
-# The 'alphabet' is specific to this program, and does not contain many  characters such as ^ and ;.
+# The 'alphabet' is specific to this program, and does not contain some characters such as ^ and $.
 ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',.!?()[]{}/\<>-_=+#*&:;~ "
 ALPHABET+='"'
 
@@ -45,7 +45,7 @@ def multiplicative_encode(multiply_key):
 
 
 # Takes parameter 'multiply_key' and asks for an encoded message. If 'multiply_key' is not coprime with the size of ALPHABET,
-# the function will return an error. In this version of the program, ALPHABET is prime, and therefore any key will work. 
+# the function will return an error. In this version of the program, ALPHABET is prime, and therefore any key will work.
 #The key will be used in the algorithm to reverse-engineer the encoding process and return the decoded message.
 def multiplicative_decode(multiply_key):
     if not are_coprime(multiply_key, len(ALPHABET)):
